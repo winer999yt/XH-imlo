@@ -1,0 +1,147 @@
+/* custom resets */
+:root {
+  --main-bg-color: whitesmoke;
+  --correct-text-color: rgb(46, 179, 50);
+  --incorrect-text-color: rgb(201, 48, 48);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: var(--main-bg-color);
+}
+
+/* main styles */
+
+body {
+  width: 100%;
+  font-family: sans-serif;
+}
+
+.main-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.main-container__main {
+  width: 100%;
+}
+
+form {
+  margin: 0 auto;
+  margin-top: -120px;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+input {
+  font: inherit;
+  width: 80%;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 0px 4px;
+  font-size: 24px;
+  padding: 20px;
+  background-color: white;
+}
+input::placeholder {
+  color: gray;
+}
+button {
+  transition: all 0.14s ease;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 8px;
+  background-color: var(--correct-text-color);
+  padding: 12px 18px;
+  margin-left: -84px;
+}
+button:hover {
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  background-color: rgb(34, 156, 36);
+  cursor: pointer;
+}
+button img {
+  width: 32px;
+}
+input,
+button {
+  border: none;
+  border-radius: 12px;
+}
+input:visited {
+  border: none;
+}
+.answers {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 140px;
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+}
+.answers > div {
+  font-size: 24px;
+  width: 46%;
+  height: 32vh;
+  padding: 30px 60px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: white;
+}
+ul {
+  width: 100%;
+  height: 96%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+li {
+  padding: 12px 0;
+}
+.main-container__main__correct-answers {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 8px;
+}
+.main-container__main__incorrect-answers {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 8px;
+}
+
+.main-container__main__correct-answers ul {
+  color: var(--correct-text-color);
+}
+
+.main-container__main__incorrect-answers ul {
+  color: var(--incorrect-text-color);
+}
+
+.main-container__main__correct-answers::before {
+  content: "To`g`ri";
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 20px;
+  margin-top: -70px;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--correct-text-color);
+}
+.main-container__main__incorrect-answers::before {
+  content: "Noto`g`ri";
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 20px;
+  margin-top: -70px;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--incorrect-text-color);
+}
