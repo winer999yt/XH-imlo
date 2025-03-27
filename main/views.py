@@ -6,15 +6,16 @@ def index_view(request):
     incorrects = None
 
     word = request.GET.get('word')
-    if 'x' not in word and 'h' not in word:
-        context = {
-            'word': word,
-            'message' : "So'z tarkibida 'Hh' yoki 'Xx' mavjud emas!"
-        }
-        return render(request, 'index.html')
-
 
     if word is not None:
+
+        if 'x' not in word and 'h' not in word:
+            context = {
+                'word': word,
+                'message': "So'z tarkibida 'Hh' yoki 'Xx' mavjud emas!",
+            }
+            return render(request, 'index.html', context)
+
         word = word.lower()
         corrects = Correct.objects.filter(word=word)
         if corrects.exists():
@@ -28,7 +29,7 @@ def index_view(request):
             else:
                 context = {
                     'word': word,
-                    'message': "Ushbu so'z mavjud emas!"
+                    'message': "Ushbu so'z mavjud emas!",
                 }
                 return render(request, 'index.html', context)
 
