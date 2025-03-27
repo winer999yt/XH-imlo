@@ -9,7 +9,7 @@ def index_view(request):
 
     if word is not None:
 
-        if 'x' not in word and 'h' not in word:
+        if 'x' not in word and 'h' not in word.lower():
             context = {
                 'word': word,
                 'message': "So'z tarkibida 'Hh' yoki 'Xx' mavjud emas!",
